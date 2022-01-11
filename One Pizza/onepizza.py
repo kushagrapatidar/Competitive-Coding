@@ -27,4 +27,6 @@ for dislike in all_dislikes:
         all_likes.remove(dislike)
         
 onepizza=all_likes
-print(onepizza)
+print(len(onepizza),end=' ')
+for ingredient in onepizza:
+    print(ingredient,end=' ')
