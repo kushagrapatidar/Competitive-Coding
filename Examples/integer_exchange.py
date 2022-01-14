@@ -35,7 +35,4 @@ for _ in range(T):
                     else:
                         break
             
-        #print(arr)
     print(count)
-
-#1 1 1 1 1 1
