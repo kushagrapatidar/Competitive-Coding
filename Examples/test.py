@@ -1,3 +1,3 @@
-arr=input('').split()
-arr=list(map(int, arr))
-print(arr)
+# from integer_exchange import count_min_operations
+# count_min_operations()
+
