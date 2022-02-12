@@ -4,10 +4,11 @@ def check_arr(arr):
             return _
     return -1
 def count_operations(arr,count):
-    K=len(arr)+1
     index=check_arr(arr)
+    K=1
+    if index==0: K=len(arr)
     if index==-1:
-        print(count)
+        # print(count)
         return count
     arr.insert(index,K)
     count+=1
@@ -16,4 +17,7 @@ def count_operations(arr,count):
 for _ in range(int(input())):
     N=int(input())
     arr=[x for x in map(int, input().split())]
-    count_operations(arr,0)
+    if len(arr)!=N:
+        print(0)
+    else:
+        print(count_operations(arr,0))
