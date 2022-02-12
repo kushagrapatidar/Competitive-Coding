@@ -3,15 +3,21 @@ import random
 def quick_sort(array, Lb, Ub):
 
     if Lb<=Ub:
-        pivot = partition(array, Lb, Ub)
+        pivot = create_pivot(array, Lb, Ub)
         print(pivot)
         quick_sort(array, Lb, pivot-1)
         quick_sort(array, pivot+1, Ub)
 
+def create_pivot(array,Lb,Ub):
+    pivot=random.randint(Lb,Ub)
+    array[Lb],array[pivot]=array[pivot],array[Lb]
+    return partition(array,Lb,Ub)
+
 def partition(array, Lb, Ub):
-    pivot = random.randint(Lb, Ub)
+    pivot=Lb
+
     pivot_element = array[pivot]
-    # print('pivot', pivot, 'Ub', Ub, 'Lb', Lb)
+    print('pivot', pivot, 'Ub', Ub, 'Lb', Lb)
     i=Lb
     j=Ub
 
@@ -19,8 +25,7 @@ def partition(array, Lb, Ub):
         print(i, pivot, 'i pivot')
         while array[i]<=pivot_element and i<Ub:
             i += 1
-
-        # print(j, pivot, 'j pivot')
+            
         while array[j]>=pivot_element and j>Lb:
             j -= 1
         
