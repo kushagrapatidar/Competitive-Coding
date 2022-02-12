@@ -8,16 +8,17 @@ def count_operations(arr,count):
     K=1
     if index==0: K=len(arr)
     if index==-1:
-        # print(count)
-        return count
-    arr.insert(index,K)
-    count+=1
-    count_operations(arr,count)
+        print(count)
+    else:
+        arr.insert(index,K)
+        count+=1
+        count_operations(arr,count)
 
 for _ in range(int(input())):
     N=int(input())
-    arr=[x for x in map(int, input().split())]
-    if len(arr)!=N:
-        print(0)
-    else:
-        print(count_operations(arr,0))
+    arr=map(int, input().split())
+    arr2=[]
+    for x in arr:
+        arr2.append(x)
+    arr=arr2
+    count_operations(arr,0)
