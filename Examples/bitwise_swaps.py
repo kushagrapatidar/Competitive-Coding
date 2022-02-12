@@ -1,6 +1,7 @@
 for _ in range(int(input())):
     N=int(input())
     arr=[x for x in map(int,input().split())]
+    arr_sorted=sorted(arr.copy())
     lst=[]
     for _ in range(N):
         for _2 in range(N):
