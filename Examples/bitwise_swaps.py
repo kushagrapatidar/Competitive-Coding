@@ -4,6 +4,6 @@ for _ in range(int(input())):
     lst=[]
     for _ in range(N):
         for _2 in range(N):
-            if _!=_2 and arr[_]&arr[_2]!=0 and ([_,_2] not in lst or [_2,_] not in lst):
+            if _!=_2 and arr[_]&arr[_2]!=0 and [_2,_] not in lst:
                 lst.append([_,_2]) 
     print(lst) 
