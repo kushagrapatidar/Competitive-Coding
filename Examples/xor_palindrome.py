@@ -12,4 +12,4 @@ for _ in range(int(input())):
             ele_lst[1]=[S[i],S[N-i-1]]
     xor=max(xor_count[0],xor_count[1])
     print(xor)
-    print(xor)
+    print(ele_lst)
