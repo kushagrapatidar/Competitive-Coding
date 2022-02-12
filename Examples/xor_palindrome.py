@@ -13,7 +13,7 @@ for _ in range(int(input())):
             ones+=1
     
     if N%2==0:
-        if zeros%2==0 and ones%2==0:
+        if (zeros%2==0 and ones%2==0) or zeros==ones:
             print("Yes")
         else:
             print("No")
