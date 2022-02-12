@@ -1,3 +1,5 @@
+from time import time
+
 def make_pairs(arr,arr_sorted):
     lst=[]
     for _ in range(N):
@@ -12,6 +14,7 @@ def rearrange(arr,arr_sorted,lst):
             arr[idx[0]],arr[idx[1]]=arr[idx[1]],arr[idx[0]]
     return arr
 
+a=time()
 for _ in range(int(input())):
     N=int(input())
     arr=[x for x in map(int,input().split())]
@@ -25,3 +28,5 @@ for _ in range(int(input())):
         print("Yes")
     else:
         print("No")
+b=time()
+print(b-a)
