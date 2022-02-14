@@ -8,11 +8,13 @@ for _ in range(int(input())):
         print("Yes")
     else:
         for i in range(N):
-            j=N-1
-            while j>i:
-                if i!=j and arr[i]&arr[j]!=0 and arr[i]>arr[j]:
+            for j in range(i+1,N):
+                if arr[i]&arr[j]!=0 and arr[i]>arr[j]:
                     arr[i],arr[j]=arr[j],arr[i]
-                j-=1
+                    i+=1
+                    j-=1
+                else:
+                    i+=1
         if arr!=arr_sorted:
             print("No")
         else:
