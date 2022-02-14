@@ -1,5 +1,3 @@
-from time import time
-a=time()
 for _ in range(int(input())):
     N=int(input())
     arr=[x for x in map(int,input().split())]
@@ -18,4 +16,3 @@ for _ in range(int(input())):
             print("No")
         else:
             print("Yes")
-print(time()-a)
