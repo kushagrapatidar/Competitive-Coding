@@ -1,14 +1,14 @@
 for _ in range(int(input())):
     N=int(input())
     arr=[x for x in map(int,input().split())]
-    swaps=0
+    arr_sorted=sorted(arr.copy())
     for i in range(N):
-        for k in range(N):
-            j=N-k-1
+        j=N-1
+        while j>i:
             if i!=j and arr[i]&arr[j]!=0 and arr[i]>arr[j]:
                 arr[i],arr[j]=arr[j],arr[i]
-                swaps+=1
-    if swaps==0:
+            j-=1
+    if arr!=arr_sorted:
         print("No")
     else:
         print("Yes")
