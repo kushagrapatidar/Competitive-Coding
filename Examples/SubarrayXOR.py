@@ -1,22 +1,17 @@
 for _ in range(int(input())):
     N=int(input())
-    S=list(input())
+    S=input()
     l=len(S)
     lst=[]
     i=1
     while i<=N:
         for j in range(N):
             if j+i>=N:
-                lst.append(S[j:N])
+                lst.append(int(S[j:N],2))
                 break
             else:
-                lst.append(S[j:j+i])
+                lst.append(int(S[j:j+i],2))
         i+=1
-    len_lst=len(lst)
-    for i in range(len_lst):
-        lst2=""
-        lst[i]=int(lst2.join(lst[i]),2)
-    xor=None
-    for i in range(1,len_lst):
+    for i in range(1,len(lst)):
         lst[i]=lst[i-1]^lst[i]
-    print(lst[-1])
+    print(lst[-1]%998244353)
