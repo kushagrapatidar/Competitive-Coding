@@ -1,16 +1,22 @@
-result=[]
-def permute(data, i, length):
-    if i == length:
-        result.append(''.join(data) )
-    else:
-        for j in range(i, length):
-            data[i], data[j] = data[j], data[i]
-            permute(data, i + 1, length)
-            data[i], data[j] = data[j], data[i] 
 for _ in range(int(input())):
     N=int(input())
-    S=input()
-    result = []
-    permute(list(S),0,N)
-    result=list(map(int,result))
-    print(result)
+    S=list(input())
+    l=len(S)
+    lst=[]
+    i=1
+    while i<=N:
+        for j in range(N):
+            if j+i>=N:
+                lst.append(S[j:N])
+                break
+            else:
+                lst.append(S[j:j+i])
+        i+=1
+    len_lst=len(lst)
+    for i in range(len_lst):
+        lst2=""
+        lst[i]=int(lst2.join(lst[i]),2)
+    xor=None
+    for i in range(1,len_lst):
+        lst[i]=lst[i-1]^lst[i]
+    print(lst[-1])
